@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../constanst/color.dart';
+import '../../models/room.dart';
 import '/Screens/Room/wigets.dart';
 import '/Screens/Room/add_room.dart';
 import '/Screens/Room/edit_room.dart';
 import '/Screens/Patient/home_patient.dart';
-
-class Room {
-  int id;
-  String name;
-  String imgUrl;
-  String desc;
-
-  Room(
-      {required this.id,
-      required this.name,
-      required this.imgUrl,
-      required this.desc});
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -41,12 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Room> rooms = [
-    Room(id: 1, imgUrl: 'assets/images/phong1.jpg', name: 'Phòng 1', desc: 'Phòng số 1'),
-    Room(id: 2, imgUrl: 'assets/images/phong2.jpg', name: 'Phòng 2', desc: 'Phòng số 2'),
-    Room(id: 3, imgUrl: 'assets/images/phong3.jpg', name: 'Phòng 3', desc: 'Phòng số 3'),
-    Room(id: 4, imgUrl: 'assets/images/phong4.jpg', name: 'Phòng 4', desc: 'Phòng số 4'),
-  ];
+  List<Room> rooms = Room.ListRoom();
 
   TextEditingController imgUrlController = TextEditingController();
   TextEditingController nameController = TextEditingController();
